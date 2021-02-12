@@ -30,7 +30,7 @@ namespace TwitterSampleStream
                 try
                 {
                     var context = services.GetRequiredService<TweetsContext>();
-                    context.Database.EnsureDeleted();
+                    //context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();                    
                 }
                 catch (Exception ex)
