@@ -1,0 +1,50 @@
+﻿@model TwitterSampleStream.Models.ViewModels.StatsViewModel
+
+<div class="row">
+    <div class="col-md-3">
+        Total Tweets: @Model.TotalTweets
+    </div>
+    <div class="col-md-3">
+        Tweets Per Minute: @String.Format("{0:0.00}", Model.TweetsPerMinute)
+    </div>
+    <div class="col-md-3">
+        Percent with URL:  @Model.TweetsWithUrlPercent.ToString("P")
+    </div>
+    <div class="col-md-3">
+        Percent with Photo: @Model.TweetsWithPhotoPercent.ToString("P")
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Top Emojis:
+    </div>
+    <div class="col-md-10">
+        @foreach(var emoji in Model.TopEmojis)
+        {
+            <p>@emoji.Name</p>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Top HasTags:
+    </div>
+    <div class="col-md-10">
+        @foreach (var ht in Model.TopHashTags)
+        {
+            <p>@ht</p>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Top Domains:
+    </div>
+    <div class="col-md-10">
+        @foreach (var domain in Model.TopDomains)
+        {
+            <p>@domain</p>
+        }
+    </div>
+</div>
+<hr/>

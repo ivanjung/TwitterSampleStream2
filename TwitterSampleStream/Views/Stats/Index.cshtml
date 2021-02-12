@@ -1,0 +1,8 @@
+﻿@model TwitterSampleStream.Models.ViewModels.StatsPageViewModel
+@{
+    ViewData["Title"] = "Twitter Stats Page";
+}
+
+<div class="text-center">
+    @Html.RenderPartialAsync("_StatsLine", Model.stats)
+</div>
